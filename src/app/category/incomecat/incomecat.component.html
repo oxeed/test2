@@ -1,0 +1,80 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3" id="area-place">
+            <div class="category-area">
+              <app-v-menu><router-outlet></router-outlet></app-v-menu>
+            </div>
+        </div>
+        <div class="col-sm-9" id="area-place">
+            <div class="category-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-7">
+                          <ul class="list-group list-group-flush">
+                            <li class="list-group-item"
+                            *ngFor="let category of incomeCategory; let idx = index ">
+                              <a (click)="clicked(idx)">
+                                  {{ category.category_name }} {{ idx }}
+                              </a>
+                              <p *ngIf="isShow === idx">{{ category.comment }}</p>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="col-sm-5">
+                                 <p style="font-weight: bold;">Новая категория хранения:</p>
+                            <form (ngSubmit)="onSubmit(inccatform)"
+                            #inccatform="ngForm">
+
+                                <div class="form-group">
+                                    <label> Название: </label>
+                                    <div *ngIf="!category_name.valid && category_name.touched"
+                                    class="alert alert-danger">   Название должно содержать не меньше 3 символов
+                                    </div>
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        placeholder="Категория Затрат"
+                                        ngModel
+                                        #category_name= "ngModel"
+                                        name="category_name"
+                                        required minlength="3">
+
+                                </div>
+                                <div class="form-group">
+                                    <select class="form-control"
+                                      name="parent_category"
+                                      ngModel
+                                       >
+                                        <option *ngFor="let category of incomeCategory" [value]="category">{{category.category_name}}</option>
+                                        <option>Родительская Категория</option>
+                                        <option>Без Категории</option>
+                                        <option></option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Подсказки:</label>
+                                    <textarea
+                                        class="form-control"
+                                        rows="3"
+                                        ngModel
+                                        name="comment"></textarea>
+                                    <small class="form-text text-muted">
+                                      Укажите подсказки через запятую, их можно будет использовать в комментариях для быстрого выбора категории.
+                                    </small>
+                                </div>
+                                <div class="form-group">
+                                    <button
+                                    type="submit"
+                                    class="btn btn-secondary"
+                                    [disabled]="!inccatform.valid"
+                                    >Создать</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>

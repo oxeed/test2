@@ -1,0 +1,36 @@
+<div >
+    <ul>
+      <li>
+        <a routerLink="/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact: true}">Домой</a>
+      </li>
+      <li>
+        <a routerLink="#" routerLinkActive="active">Планирование</a>
+      </li>
+      <li expandVerticalMenu>
+        <a routerLinkActive="active">Справочники</a>
+      </li>
+        <ul class="v-sub-menu">
+          <li>
+            <a routerLink="../expense"
+            routerLinkActive="active">Категории Затрат</a>
+          </li>
+          <li>
+            <a routerLink="../income_category"
+            routerLinkActive="active">Категории Доходов</a>
+          </li>
+          <li>
+            <a routerLink="../keeper"
+            routerLinkActive="active">Места Хранения</a>
+          </li>
+        </ul>
+      <li>
+        <a routerLink="#"
+        routerLinkActive="active">Накопления</a></li>
+      <li>
+        <a routerLink="#"
+        routerLinkActive="active">Отчеты, Графики</a>
+      </li>
+    </ul>
+</div>
