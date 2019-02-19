@@ -1,13 +1,15 @@
-import { KeeperModel } from './keeper.model';
+import { KeeperModel } from '../keeper/keeper.model';
 
 
 
 
 export class KeeperService {
 
-  lastId: 1;
-  public KeepCategory: KeeperModel[] = [
+  lastId= 1;
 
+  private KeepCategory: KeeperModel[] = [
+    new KeeperModel (1,'Наличные', '100,00'),
+    new KeeperModel (2,'Кредитная крарта', '100,00')
   ];
 
   addKeeperModel(keeper: KeeperModel) {
@@ -21,7 +23,10 @@ export class KeeperService {
     return this.KeepCategory;
   }
 
-  editKeeperModel() {}
+  editKeeperModel() {
+
+  }
 }
+
 
 

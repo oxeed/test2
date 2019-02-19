@@ -1,35 +1,43 @@
 <div class="container">
-    <div class="row">
-      <div class="col-sm-7">
-       Введите трату за:
-       <pre>{{ model | json }}</pre>
-      </div>
-      <div class="col-sm-5">
-
-              <div class="input-group mb-3">
-                <input
-                class="form-control"
-                type="text"
-                [(ngModel)]="model"
-                ngbDatepicker
-                #d="ngbDatepicker"/>
-
-                <div class="input-group-append">
-                <button
-                class="btn btn-outline-secondary"
-                (click)="d.toggle()">Toggle</button>
-
-              </div>
-              </div>
-
-
-      </div>
+  <form>
+  <div class="row">     
+    <div class="col-sm-7">
+      Введите трату за:
+      <pre>{{ model | json }}</pre>
     </div>
-    <div class="row">
-        <div class="col-sm">
-          One of three columns
+      
+    <div class="col-sm-5" >
+        <div class="input-group mb-3">
+          <input
+            class="form-control"
+            type="text"
+            [(ngModel)]="model"
+            ngbDatepicker
+            #d="ngbDatepicker"/>
+          <div class="input-group-append">
+            <button
+              class="btn btn-outline-secondary"
+              (click)="d.toggle()">Toggle
+            </button>
+          </div>
         </div>
     </div>
+     </div>
+  
+    <div class="row">
+        <div class="col-sm-12">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Наличные"
+            ngModel
+            #summ="ngModel"
+            name="summ"
+            required minlength="3">
+          <button type="submit">Сумма</button>
+        </div>
+    </div>
+    <br>
     <div class="row">
         <div class="col-sm">
             One of three columns
@@ -37,7 +45,11 @@
         <div class="col-sm">
             One of three columns
         </div>
-        </div>
+      </div>
+   
+  </form>
   </div>
+
+
 
 

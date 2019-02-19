@@ -14,6 +14,8 @@ import { HomeComponent } from './home/home.component';
 import { KeeperComponent } from './keeper/keeper.component';
 import { VMenuComponent } from './v-menu/v-menu.component';
 import { IncomecatComponent } from './category/incomecat/incomecat.component';
+import { KeeperService } from './keeper/keeper.service';
+import { IncomeCategoriesService } from './category/incomecat/incomecat.service';
 
 import { TreeModule } from 'angular-tree-component';
 import { DatainputComponent } from './datainput/datainput.component';
