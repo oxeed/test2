@@ -1,6 +1,8 @@
+import { IncomeCategories } from './../../category/incomecat/income-categories.model';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { CostEntry } from '../costentry/costentry.model';
+
 
 @Component({
   selector: 'app-costentry',
@@ -9,6 +11,10 @@ import { CostEntry } from '../costentry/costentry.model';
 })
 export class CostentryComponent implements OnInit {
   model;
+  costEntry: CostEntry[];
+  incomeCat: IncomeCategories[];
+
+  @ViewChild('costEnt') costEntryForm: NgForm;
 
 
   constructor() { }
@@ -16,5 +22,7 @@ export class CostentryComponent implements OnInit {
   ngOnInit() {
 
   }
+
+  onSubmit() {}
 
 }
