@@ -2,7 +2,7 @@ import { IncomeCategories } from './income-categories.model';
 import { Injectable } from '@angular/core';
 
 
-
+@Injectable()
 export class IncomeCategoriesService {
 
   lastId =  1;

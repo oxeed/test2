@@ -12,7 +12,7 @@
           <input
             class="form-control"
             type="text"
-            [(ngModel)]="costEntry.date"
+            [(ngModel)]="costEntry"
             name="date"
             ngbDatepicker
             #d="ngbDatepicker"/>
@@ -56,7 +56,8 @@
                 <select class="custom-select" id="inputGroupSelect02"
                 ngModel
                 name="income_select">
-                    <option  *ngFor="let category of incomeCat" [value]="category">{{ category.category_name }}</option>
+                    <option  *ngFor="let i of incomeCat" 
+                    [value]="category">{{ category.category_name }}</option>
                     <option value="1">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
