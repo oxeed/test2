@@ -10,7 +10,7 @@ import { CostEntryService } from '../costentry/costentry.service';
   selector: 'app-costentry',
   templateUrl: './costentry.component.html',
   styleUrls: ['./costentry.component.css'],
-  providers:[]
+  providers:[CostEntryService]
 })
 export class CostentryComponent implements OnInit {
   model;
@@ -27,6 +27,14 @@ export class CostentryComponent implements OnInit {
 
   }
 
-  onSubmit() {}
+  onSubmit() {
+    const newCost = new CostEntry(
+      this.costEntryForm.value.id,
+      this.costEntryForm.value.date,
+      this.costEntryForm.value.cat,
+      this.costEntryForm.value.summ);
+    this.costEntryForm.reset();
+    console.log(newCost);
+  }
 
 }

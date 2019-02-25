@@ -13,10 +13,7 @@ export class IncomeCategoriesService {
     new IncomeCategories ( 'Dāvanas', 'Продукты', 'Спорт', 3),
     new IncomeCategories ( 'Prēmija', 'Продукты', 'Чтобы было вкусно', 1),
     new IncomeCategories ( 'Iļģuciems', 'Продукты', 'Дизель', 2),
-    new IncomeCategories ( 'Inspecta', 'Продукты', 'Спорт', 3),
-    new IncomeCategories ( 'RAKUS', 'Продукты', 'Чтобы было вкусно', 1),
-    new IncomeCategories ( 'BKUS', 'Продукты', 'Дизель', 2),
-    new IncomeCategories ( 'Sigulda', 'Продукты', 'Спорт', 3)
+
   ];
 
   getIncomeCategories() {
