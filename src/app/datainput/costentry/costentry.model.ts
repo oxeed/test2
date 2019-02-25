@@ -2,13 +2,13 @@ export class CostEntry {
 public id;
 public date;
 public inCat;
-public keepMod;
+public summ;
 
-constructor(id: number, date: number, inCat: any[], keepMod: any[] ) {
+constructor(id: number, date: number, inCat: any, summ: number ) {
 this.id = id;
 this.date = date;
 this.inCat = inCat;
-this.keepMod = keepMod;
+this.summ = summ;
 }
 }
 
