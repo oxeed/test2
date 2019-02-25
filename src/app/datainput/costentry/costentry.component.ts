@@ -23,6 +23,8 @@ export class CostentryComponent implements OnInit {
 
   }
 
-  onSubmit() {}
+  onSubmit() {
+    console.log(this.incomeCat)
+  }
 
 }

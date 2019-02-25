@@ -1,5 +1,5 @@
 <div class="container">
-  <form (ngSubmit)="onSubmit(costEnt)"
+  <form (ngSubmit)="onSubmit()"
   #costEnt="ngForm">
   <div class="row">
     <div class="col-sm-7">
@@ -12,7 +12,7 @@
           <input
             class="form-control"
             type="text"
-            [(ngModel)]="costEntry.date"
+            [(ngModel)]="costEntry"
             name="date"
             ngbDatepicker
             #d="ngbDatepicker"/>
