@@ -31,11 +31,15 @@ export class CostentryComponent implements OnInit {
     const newCost = new CostEntry(
       this.costEntryForm.value.id,
       this.costEntryForm.value.date,
-      this.costEntryForm.value.cat,
+      this.costEntryForm.value.income_select,
       this.costEntryForm.value.summ);
     this.costEntryForm.reset();
     console.log(newCost);
   }
+<<<<<<< HEAD
 
 }
 
+=======
+  }
+>>>>>>> df56bc67b999f678b3c0eb0ece5d5a997c24c2b3

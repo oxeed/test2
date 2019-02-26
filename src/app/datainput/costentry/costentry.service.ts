@@ -11,4 +11,6 @@ export class CostEntryService {
     getIncomeCat(){
         return this.incomeCategoryService.getIncomeCategories();
     }
+
+    
 }
