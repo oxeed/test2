@@ -56,10 +56,10 @@
                 <select class="custom-select" id="inputGroupSelect02"
                 ngModel
                 name="income_select">
-                    <option ngModel
-                    name="cat"
+                    <option 
+                   
                       *ngFor="let i of incomeCat" 
-                    [value]="i">{{ i.category_name }}</option>
+                    [ngValue]="i">{{ i.category_name }}</option>
                   
                 </select>
           </div>
