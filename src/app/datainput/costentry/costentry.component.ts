@@ -28,7 +28,12 @@ export class CostentryComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.incomeCat)
+    const newCost = new CostEntry(
+      this.costEntryForm.value.id,
+      this.costEntryForm.value.date,
+      this.costEntryForm.value.income_select,
+      this.costEntryForm.value.summ);
+    this.costEntryForm.reset();
+    console.log(newCost);
   }
-
-}
+  }
