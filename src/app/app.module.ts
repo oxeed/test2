@@ -55,7 +55,8 @@ const appRoutes: Routes = [
     TreeModule.forRoot(),
     NgbModule
   ],
-  providers: [IncomeCategoriesService],
+  providers: [IncomeCategoriesService, 
+    KeeperService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

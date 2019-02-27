@@ -3,6 +3,9 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { CostEntry } from '../costentry/costentry.model';
 import { CostEntryService } from '../costentry/costentry.service';
+import { KeeperModel } from '../../keeper/keeper.model';
+import { KeeperService } from 'src/app/keeper/keeper.service';
+
 
 
 
@@ -10,12 +13,16 @@ import { CostEntryService } from '../costentry/costentry.service';
   selector: 'app-costentry',
   templateUrl: './costentry.component.html',
   styleUrls: ['./costentry.component.css'],
-  providers:[CostEntryService]
+  providers:[ CostEntryService]
 })
 export class CostentryComponent implements OnInit {
   model;
   costEntry: CostEntry[];
   incomeCat: IncomeCategories[];
+  keeper: KeeperModel[];
+  lastId;
+
+
 
   @ViewChild('costEnt') costEntryForm: NgForm;
 
@@ -24,6 +31,7 @@ export class CostentryComponent implements OnInit {
 
   ngOnInit() {
     this.incomeCat = this.costEntryService.getIncomeCat();
+    this.keeper = this.costEntryService.getKeeper();
 
   }
 
@@ -31,9 +39,11 @@ export class CostentryComponent implements OnInit {
     const newCost = new CostEntry(
       this.costEntryForm.value.id,
       this.costEntryForm.value.date,
-      this.costEntryForm.value.income_select,
-      this.costEntryForm.value.summ);
+      this.costEntryForm.value.summ,
+      this.costEntryForm.value.keeper,
+      this.costEntryForm.value.income_select);
     this.costEntryForm.reset();
     console.log(newCost);
+    console.log(this.lastId)
   }
   }
