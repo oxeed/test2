@@ -7,14 +7,12 @@ import { KeeperService } from '../../keeper/keeper.service';
 @Injectable()
 export class CostEntryService {
 
-    lastId: number;
+    lastId: number = 0;
+    
+    Costentry: CostEntry[] = [];
     
     constructor(private incomeCategoryService: IncomeCategoriesService, 
                 private keeperService: KeeperService){}
-
-    getId(lastId){
-        this.lastId = lastId;
-    }
 
     getIncomeCat(){
         return this.incomeCategoryService.getIncomeCategories();
@@ -22,6 +20,16 @@ export class CostEntryService {
 
     getKeeper(){
         return this.keeperService.getKeeperModel();
+
+    }
+
+    getCostEntry(){
+        return this.Costentry;
+    }
+
+    addCostEntry(costentry: CostEntry){
+        this.Costentry.push(costentry);
+        return this;
     }
 
     

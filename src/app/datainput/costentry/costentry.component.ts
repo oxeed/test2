@@ -18,9 +18,11 @@ import { KeeperService } from 'src/app/keeper/keeper.service';
 export class CostentryComponent implements OnInit {
   model;
   costEntry: CostEntry[];
-  incomeCat: IncomeCategories[];
-  keeper: KeeperModel[];
-  lastId;
+  incomeCat;
+  keeper;
+  costId: number = 0;
+
+
 
 
 
@@ -32,18 +34,22 @@ export class CostentryComponent implements OnInit {
   ngOnInit() {
     this.incomeCat = this.costEntryService.getIncomeCat();
     this.keeper = this.costEntryService.getKeeper();
+   
 
+    
   }
 
   onSubmit() {
     const newCost = new CostEntry(
-      this.costEntryForm.value.id,
+      this.costEntryForm.value.id = this.costId++,
       this.costEntryForm.value.date,
       this.costEntryForm.value.summ,
       this.costEntryForm.value.keeper,
       this.costEntryForm.value.income_select);
+    this.costEntryService.addCostEntry(newCost);
     this.costEntryForm.reset();
     console.log(newCost);
-    console.log(this.lastId)
+    console.log(this.costEntryService.getKeeper())
+    
   }
   }
