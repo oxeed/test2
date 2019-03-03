@@ -39,10 +39,6 @@ export class CostentryComponent implements OnInit {
 
 
   }
-<<<<<<< HEAD
 
 }
 
-=======
-  }
->>>>>>> df56bc67b999f678b3c0eb0ece5d5a997c24c2b3
