@@ -10,7 +10,7 @@ import { CostEntryService } from '../costentry/costentry.service';
   selector: 'app-costentry',
   templateUrl: './costentry.component.html',
   styleUrls: ['./costentry.component.css'],
-  providers:[CostEntryService]
+  providers: [CostEntryService]
 })
 export class CostentryComponent implements OnInit {
   model;
