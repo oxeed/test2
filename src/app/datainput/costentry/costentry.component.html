@@ -1,6 +1,7 @@
 <div class="container">
   <form (ngSubmit)="onSubmit()"
   #costEnt="ngForm">
+  <br>
   <div class="row">
     <div class="col-sm-7">
       Введите трату за:
@@ -33,7 +34,7 @@
           <input
             type="text"
             class="form-control"
-            placeholder="Наличные"
+            placeholder="Сумма"
             ngModel
             #summ="ngModel"
             name="summ"
@@ -48,48 +49,70 @@
         </div>
       </div>
 
-    <br>
+    <div class="row">
+<<<<<<< HEAD
+        <div class="col-sm-12">
+            <div class="input-group mb-3">
+                <select class="custom-select" id="inputGroupSelect02"
+                ngModel
+                name="income_select">
+                    <option
+                      *ngFor="let i of incomeCat"
+                    [ngValue]="i">{{ i.category_name }}</option>
+
+                </select>
+          </div>
+=======
+      <div class="col-sm-12">
+          <p>Выбрать кошелек:</p>
+          <div class="input-group mb-3">
+            
+              <select class="custom-select" id="inputGroupSelect02"
+              ngModel
+              name="keeper">
+              <option value="" disabled selected>Выбрать . . . </option>
+                  <option     
+                    *ngFor="let keep of keeper" 
+                  [ngValue]="keep">{{ keep.name }}</option>
+                
+              </select>
+>>>>>>> d69dccae3752ba7f040918a9f16c335ce890aa47
+        </div>
+      </div>
+    </div>
 
     <div class="row">
         <div class="col-sm-12">
+            <p>Выбрать категорию:</p>
             <div class="input-group mb-3">
                 <select class="custom-select" id="inputGroupSelect02"
                 ngModel
                 name="income_select">
+<<<<<<< HEAD
                     <option
                       *ngFor="let i of incomeCat"
                     [ngValue]="i">{{ i.category_name }}</option>
 
+=======
+                <option value="" disabled selected>Выбрать . . .</option>
+                  <option     
+                    *ngFor="let inc of incomeCat" 
+                   [ngValue]="inc">{{ inc.category_name }}</option>
+                  
+>>>>>>> d69dccae3752ba7f040918a9f16c335ce890aa47
                 </select>
           </div>
         </div>
       </div>
-      <br>
-      <div class="row">
-        <div class="col-sm-12">
-            <div class="input-group mb-3">
-                <select class="custom-select" id="inputGroupSelect02"
-                ngModel
-                name="income_select">
-                    <option
-                      *ngFor="let i of incomeCat"
-                    [ngValue]="i">{{ i.category_name }}</option>
-
-                </select>
-          </div>
-        </div>
-      </div>
-      <div class="row">
+    <div class="row">
           <div class="col-sm-12">
             <button type="submit" class="btn btn-primary">Ввести</button>
           </div>
       </div>
 
-      <pre>{{ costEntry }} </pre>
-
-
   </form>
   </div>
+  
 
 
 

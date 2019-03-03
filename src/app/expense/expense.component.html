@@ -1,14 +1,18 @@
-<div class="container">
-  <div class="row">
-      <div class="col-sm-3" id="area-place">
-          <div class="category-area"> 
-            <app-v-menu><router-outlet></router-outlet></app-v-menu>
-          </div>
-      </div>    
-      <div class="col-sm-9" id="area-place">
-          <div class="category-area">
-          Expense Category
-          </div>
-      </div>       
-  </div>
-  </div>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">Дата</th>
+    <th scope="col" sortable="name" (sort)="onSort($event)">Куда </th>
+    <th scope="col" sortable="area" (sort)="onSort($event)">Откуда</th>
+    <th scope="col" sortable="population" (sort)="onSort($event)">Сумма</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let exp of expenseList">
+    <td>{{ exp.date }}sdfd</td>
+    <td>{{ exp.inCat }}</td>
+    <td>{{ exp.keeper }}</td>
+    <td>{{ exp.summ }}</td>
+  </tr>
+  </tbody>
+</table>

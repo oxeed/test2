@@ -1,14 +1,18 @@
 export class CostEntry {
-public id;
-public date;
-public inCat;
-public summ;
+    public date;
+    public id;
+    public summ;
+    public keeper;
+    public inCat;
 
-constructor(id: number, date: number, inCat: [], summ: number ) {
-this.id = id;
-this.date = date;
-this.inCat = inCat;
-this.summ = summ;
+
+constructor(id: number, date: [], summ: number, keeper:[], inCat: [] ) {
+    this.date = date;
+    this.id = id;
+    this.summ = summ;
+    this.keeper = keeper;
+    this.inCat = inCat;
+
 }
 }
 
