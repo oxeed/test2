@@ -32,10 +32,10 @@ export class CostentryComponent implements OnInit {
       this.costEntryForm.value.id,
       this.costEntryForm.value.date,
       this.costEntryForm.value.income_select,
+      this.costEntryForm.value.keeper,
       this.costEntryForm.value.summ);
     this.costEntryForm.reset();
-
-    console.log(newCost)
+    console.log(newCost);
 
 
   }

@@ -3,10 +3,10 @@ import { CostEntryService } from '../datainput/costentry/costentry.service';
 import {  CostEntry } from '../datainput/costentry/costentry.model';
 
 @Injectable()
-export class expenseService{
-    constructor(private costEntryService: CostEntryService){}
+export class ExpenseService {
+    constructor(private costEntryService: CostEntryService) {}
 
-    getCostEnrtyList(){
+    getCostEnrtyList() {
         this.costEntryService.getCostEntry();
     }
 }
