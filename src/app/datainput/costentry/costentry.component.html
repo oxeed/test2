@@ -1,4 +1,4 @@
-<div class="container">
+gi<div class="container">
   <form (ngSubmit)="onSubmit()"
   #costEnt="ngForm">
   <br>
@@ -50,19 +50,18 @@
       </div>
 
     <div class="row">
-      <div class="col-sm-12">
-          <p>Выбрать кошелек:</p>
-          <div class="input-group mb-3">
-            
-              <select class="custom-select" id="inputGroupSelect02"
-              ngModel
-              name="keeper">
-              <option value="" disabled selected>Выбрать . . . </option>
-                  <option     
-                    *ngFor="let keep of keeper" 
-                  [ngValue]="keep">{{ keep.name }}</option>
-                
-              </select>
+<<<<<<< HEAD
+        <div class="col-sm-12">
+            <div class="input-group mb-3">
+                <select class="custom-select" id="inputGroupSelect02"
+                ngModel
+                name="income_select">
+                    <option
+                      *ngFor="let i of incomeCat"
+                    [ngValue]="i">{{ i.category_name }}</option>
+
+                </select>
+          </div>
         </div>
       </div>
     </div>
@@ -74,11 +73,10 @@
                 <select class="custom-select" id="inputGroupSelect02"
                 ngModel
                 name="income_select">
-                <option value="" disabled selected>Выбрать . . .</option>
-                  <option     
-                    *ngFor="let inc of incomeCat" 
-                   [ngValue]="inc">{{ inc.category_name }}</option>
-                  
+                    <option
+                      *ngFor="let i of incomeCat"
+                    [ngValue]="i">{{ i.category_name }}</option>
+
                 </select>
           </div>
         </div>
@@ -91,7 +89,7 @@
 
   </form>
   </div>
-  
+
 
 
 
