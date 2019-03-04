@@ -9,26 +9,27 @@
       <pre>{{ model | json }}</pre>
     </div>
 
+
     <div class="col-sm-5" >
         <div class="input-group mb-3">
           <input
             class="form-control"
             type="text"
-            [(ngModel)]="costEntry"
+            [(ngModel)]="date"
             name="date"
             ngbDatepicker
             #d="ngbDatepicker"/>
           <div class="input-group-append">
             <a
               class="btn btn-outline-secondary"
-              (click)="d.toggle()">Toggle
+              (click)="d.toggle()">Дата
           </a>
           </div>
         </div>
     </div>
      </div>
 
-     <br>
+    
 
     <div class="row">
         <div class="col-sm-12">
@@ -59,7 +60,7 @@
             <div class="input-group mb-3">
                 <select class="custom-select" id="inputGroupSelect02"
                 ngModel
-                name="income_select">
+                name="keeper_select">
                     <option
                       *ngFor="let i of keeper"
                     [ngValue]="i">{{ i.name }}</option>
@@ -67,6 +68,7 @@
             </div>
           </div>
       </div>
+
     <div class="row">
         <div class="col-sm-12">
             <p>Выбрать категорию:</p>

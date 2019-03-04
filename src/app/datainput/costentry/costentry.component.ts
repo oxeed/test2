@@ -15,7 +15,7 @@ import { KeeperService } from '../../keeper/keeper.service';
   providers: [CostEntryService]
 })
 export class CostentryComponent implements OnInit {
-  model;
+  date;
   costEntry: CostEntry[];
   incomeCat;
   keeper;
@@ -39,11 +39,11 @@ export class CostentryComponent implements OnInit {
     const newCost = new CostEntry(
       this.costEntryForm.value.id,
       this.costEntryForm.value.date,
-      this.costEntryForm.value.income_select,
-      this.costEntryForm.value.keeper,
-      this.costEntryForm.value.summ);
+      this.costEntryForm.value.summ,
+      this.costEntryForm.value.keeper_select,
+      this.costEntryForm.value.income_select);
     this.costEntryForm.reset();
-    console.log(this.costEntryService.addCostEntry(newCost))
+    console.log(newCost)
     
    
 

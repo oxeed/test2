@@ -2,16 +2,16 @@ import { IncomeCategories } from '../../category/incomecat/income-categories.mod
 import { KeeperModel } from '../../keeper/keeper.model';
 
 export class CostEntry {
-    public date;
     public id;
+    public date;
     public summ;
     public keeper;
     public inCat;
 
 
 constructor(id: number, date: [], summ: number, keeper:KeeperModel[], inCat: IncomeCategories[] ) {
-    this.date = date;
     this.id = id;
+    this.date = date;
     this.summ = summ;
     this.keeper = keeper;
     this.inCat = inCat;

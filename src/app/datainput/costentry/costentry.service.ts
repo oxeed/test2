@@ -9,7 +9,7 @@ export class CostEntryService {
 
     lastId: number = 0;
     
-    Costentry: CostEntry[] = [];
+    costEntry: CostEntry[] = [];
     
     constructor(private incomeCategoryService: IncomeCategoriesService, 
                 private keeperService: KeeperService){}
@@ -24,11 +24,11 @@ export class CostEntryService {
     }
 
     getCostEntry(){
-        return this.Costentry;
+        return this.costEntry;
     }
 
-    addCostEntry(newCost){
-        this.Costentry.push(newCost);
+    addCostEntry(costEntry: CostEntry){
+        this.costEntry.push(costEntry);
         return this;
     }
 

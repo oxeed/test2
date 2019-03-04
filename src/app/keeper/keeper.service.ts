@@ -1,8 +1,6 @@
 import { KeeperModel } from '../keeper/keeper.model';
 
 
-
-
 export class KeeperService {
 
   lastId= 1;
