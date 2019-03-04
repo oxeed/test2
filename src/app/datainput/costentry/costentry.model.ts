@@ -1,5 +1,5 @@
 import { IncomeCategories } from '../../category/incomecat/income-categories.model';
-import { Kepp }
+import { KeeperModel } from '../../keeper/keeper.model';
 
 export class CostEntry {
     public date;
@@ -9,7 +9,7 @@ export class CostEntry {
     public inCat;
 
 
-constructor(id: number, date: [], summ: [], keeper:[], inCat: IncomeCategories[] ) {
+constructor(id: number, date: [], summ: number, keeper:KeeperModel[], inCat: IncomeCategories[] ) {
     this.date = date;
     this.id = id;
     this.summ = summ;
