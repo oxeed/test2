@@ -2,11 +2,11 @@ import { IncomeCategories } from '../../category/incomecat/income-categories.mod
 import { KeeperModel } from '../../keeper/keeper.model';
 
 export class CostEntry {
-    public id;
-    public date;
-    public summ;
-    public keeper;
-    public inCat;
+    public id: number;
+    public date: [];
+    public summ: number;
+    public keeper: KeeperModel[];
+    public inCat: IncomeCategories[];
 
 
 constructor(id: number, date: [], summ: number, keeper:KeeperModel[], inCat: IncomeCategories[] ) {
