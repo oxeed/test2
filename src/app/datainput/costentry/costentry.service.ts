@@ -3,50 +3,37 @@ import { CostEntry } from '../costentry/costentry.model';
 import { IncomeCategories } from '../../category/incomecat/income-categories.model';
 import { IncomeCategoriesService } from '../../category/incomecat/incomecat.service';
 import { KeeperService } from '../../keeper/keeper.service';
-import { KeeperModel } from '../../keeper/keeper.model';
 
 @Injectable()
 export class CostEntryService {
 
-    lastId: number = 0;
-    
-    costEntry: CostEntry[] = [
-        new CostEntry(
-            1, 
-            [], 
-            100, 
-            [new KeeperModel (1,'Наличные', '100,00')],
-            [new IncomeCategories( 'BIT','Продукты','Чтобы было вкусно', 1) ],
-             ),
-        new CostEntry(
-            1, 
-            [], 
-            100, 
-            [new KeeperModel (1,'Наличные', '100,00')],
-            [new IncomeCategories( 'BIT','Продукты','Чтобы было вкусно', 1) ],
-             ), 
-    ];
-    
-    constructor(private incomeCategoryService: IncomeCategoriesService, 
-                private keeperService: KeeperService){}
+    lastId = 0;
 
-    getIncomeCat(){
+    Costentry: CostEntry[] = [
+        new CostEntry(1, [], 100, [], []),
+        new CostEntry(1, [], 100, [], [])
+    ];
+
+    constructor(private incomeCategoryService: IncomeCategoriesService,
+                private keeperService: KeeperService) {}
+
+    getIncomeCat() {
         return this.incomeCategoryService.getIncomeCategories();
     }
 
-    getKeeper(){
+    getKeeper() {
         return this.keeperService.getKeeperModel();
 
     }
 
-    getCostEntry(){
-        return this.costEntry;
+    getCostEntry() {
+        return this.Costentry.slice();
     }
 
-    addCostEntry(costEntry: CostEntry){
-        this.costEntry.push(costEntry);
+    addCostEntry(costentry: CostEntry) {
+        this.Costentry.push(costentry);
         return this;
     }
 
-    
+
 }
