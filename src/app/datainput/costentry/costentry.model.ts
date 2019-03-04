@@ -6,7 +6,7 @@ export class CostEntry {
     public inCat;
 
 
-constructor(id: number, date: [], summ: number, keeper:[], inCat: [] ) {
+constructor(id: number, date: [], summ: [], keeper:[], inCat: [] ) {
     this.date = date;
     this.id = id;
     this.summ = summ;

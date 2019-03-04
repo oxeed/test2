@@ -8,6 +8,7 @@ export class expenseService{
 
     getCostEnrtyList(){
         this.costEntryService.getCostEntry();
+        return
     }
 }
 
