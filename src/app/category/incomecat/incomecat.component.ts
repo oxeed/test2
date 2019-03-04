@@ -15,22 +15,17 @@ export class IncomecatComponent implements OnInit {
 
   @ViewChild('inccatform') incomeCategoryForm: NgForm;
   incomeCategory: IncomeCategories[];
-  lastId = 0;
   isShow: number;
 
   clicked(index) {
     this.isShow = index;
   }
 
-
-
   constructor(private incomeCategoriesService: IncomeCategoriesService ) { }
 
   ngOnInit() {
     this.incomeCategory = this.incomeCategoriesService.getIncomeCategories();
   }
-
-
 
   onSubmit() {
 

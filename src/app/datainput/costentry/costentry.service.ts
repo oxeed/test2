@@ -3,15 +3,28 @@ import { CostEntry } from '../costentry/costentry.model';
 import { IncomeCategories } from '../../category/incomecat/income-categories.model';
 import { IncomeCategoriesService } from '../../category/incomecat/incomecat.service';
 import { KeeperService } from '../../keeper/keeper.service';
+import { KeeperModel } from '../../keeper/keeper.model';
 
 @Injectable()
 export class CostEntryService {
 
     lastId: number = 0;
     
-    Costentry: CostEntry[] = [
-        new CostEntry(1,[],100,[],[]),
-        new CostEntry(1,[],100,[],[])
+    costEntry: CostEntry[] = [
+        new CostEntry(
+            1, 
+            [], 
+            100, 
+            [new KeeperModel (1,'Наличные', '100,00')],
+            [new IncomeCategories( 'BIT','Продукты','Чтобы было вкусно', 1) ],
+             ),
+        new CostEntry(
+            1, 
+            [], 
+            100, 
+            [new KeeperModel (1,'Наличные', '100,00')],
+            [new IncomeCategories( 'BIT','Продукты','Чтобы было вкусно', 1) ],
+             ), 
     ];
     
     constructor(private incomeCategoryService: IncomeCategoriesService, 
@@ -27,11 +40,11 @@ export class CostEntryService {
     }
 
     getCostEntry(){
-        return this.Costentry;
+        return this.costEntry;
     }
 
-    addCostEntry(costentry: CostEntry){
-        this.Costentry.push(costentry);
+    addCostEntry(costEntry: CostEntry){
+        this.costEntry.push(costEntry);
         return this;
     }
 

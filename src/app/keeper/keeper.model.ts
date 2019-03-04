@@ -1,6 +1,6 @@
 export class KeeperModel {
    public id;
-   public name;
+   public name: string;
    public summ;
 
 

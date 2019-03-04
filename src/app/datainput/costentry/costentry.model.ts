@@ -1,14 +1,17 @@
+import { IncomeCategories } from '../../category/incomecat/income-categories.model';
+import { KeeperModel } from '../../keeper/keeper.model';
+
 export class CostEntry {
-    public date;
-    public id;
-    public summ;
-    public keeper;
-    public inCat;
+    public id: number;
+    public date: [];
+    public summ: number;
+    public keeper: KeeperModel[];
+    public inCat: IncomeCategories[];
 
 
-constructor(id: number, date: [], summ: number, keeper:[], inCat: [] ) {
-    this.date = date;
+constructor(id: number, date: [], summ: number, keeper:KeeperModel[], inCat: IncomeCategories[] ) {
     this.id = id;
+    this.date = date;
     this.summ = summ;
     this.keeper = keeper;
     this.inCat = inCat;

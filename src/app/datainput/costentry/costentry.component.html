@@ -1,4 +1,8 @@
 <div class="container">
+<<<<<<< HEAD
+=======
+
+>>>>>>> af007b35c87c560bc1e3bd947fc98cbaac66bbb8
   <form (ngSubmit)="onSubmit()"
   #costEnt="ngForm">
   <br>
@@ -8,25 +12,27 @@
       <pre>{{ model | json }}</pre>
     </div>
 
+
     <div class="col-sm-5" >
         <div class="input-group mb-3">
           <input
             class="form-control"
             type="text"
-            [(ngModel)]="costEntry"
+            [(ngModel)]="date"
             name="date"
             ngbDatepicker
             #d="ngbDatepicker"/>
           <div class="input-group-append">
             <a
               class="btn btn-outline-secondary"
-              (click)="d.toggle()">Toggle
+              (click)="d.toggle()">Дата
           </a>
           </div>
         </div>
     </div>
      </div>
-     <br>
+
+    
 
     <div class="row">
         <div class="col-sm-12">
@@ -47,22 +53,27 @@
             </div>
           </div>
         </div>
-      </div>
+    </div>
+  
+ 
 
     <div class="row">
+<<<<<<< HEAD
 
+=======
+>>>>>>> af007b35c87c560bc1e3bd947fc98cbaac66bbb8
         <div class="col-sm-12">
+            <p>Выбрать кошелек:</p>
             <div class="input-group mb-3">
                 <select class="custom-select" id="inputGroupSelect02"
                 ngModel
-                name="income_select">
+                name="keeper_select">
                     <option
-                      *ngFor="let i of incomeCat"
-                    [ngValue]="i">{{ i.category_name }}</option>
-
+                      *ngFor="let i of keeper"
+                    [ngValue]="i">{{ i.name }}</option>
                 </select>
+            </div>
           </div>
-        </div>
       </div>
 
     <div class="row">
@@ -79,15 +90,17 @@
                 </select>
           </div>
         </div>
-      </div>
+    </div>
+
     <div class="row">
           <div class="col-sm-12">
             <button type="submit" class="btn btn-primary">Ввести</button>
           </div>
       </div>
+     <p>  AAAA</p>
 
   </form>
-  </div>
+  
 
 
 
