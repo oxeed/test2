@@ -24,13 +24,6 @@ export class CostentryComponent implements OnInit {
 
   ngOnInit() {
     this.incomeCat = this.costEntryService.getIncomeCat();
-<<<<<<< HEAD
-    this.keeper = this.costEntryService.getKeeper();
-    this.costentry= this.costEntryService.addCostEntry(this.costentry);
-    
-   
-=======
->>>>>>> 727560b093cf157a16f4f713e51ce543c414b81d
 
   }
 
@@ -41,21 +34,15 @@ export class CostentryComponent implements OnInit {
       this.costEntryForm.value.income_select,
       this.costEntryForm.value.summ);
     this.costEntryForm.reset();
-<<<<<<< HEAD
     console.log(CostEntry)
-=======
 
->>>>>>> 727560b093cf157a16f4f713e51ce543c414b81d
     console.log(newCost)
     console.log(this.costEntryService.addCostEntry(newCost))
     
    
 
-<<<<<<< HEAD
     
   }
-=======
->>>>>>> 727560b093cf157a16f4f713e51ce543c414b81d
 
   }
 

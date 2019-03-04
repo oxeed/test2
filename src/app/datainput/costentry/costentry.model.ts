@@ -1,3 +1,6 @@
+import { IncomeCategories } from '../../category/incomecat/income-categories.model';
+import { Kepp }
+
 export class CostEntry {
     public date;
     public id;
@@ -6,7 +9,7 @@ export class CostEntry {
     public inCat;
 
 
-constructor(id: number, date: [], summ: [], keeper:[], inCat: [] ) {
+constructor(id: number, date: [], summ: [], keeper:[], inCat: IncomeCategories[] ) {
     this.date = date;
     this.id = id;
     this.summ = summ;
