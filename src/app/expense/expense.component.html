@@ -8,12 +8,13 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let exp of expenseList">
-    <td>{{ exp.date }}</td>
+  <tr *ngFor="let exp of expenseList"
+  [ngModel]="exp">
+    <td>{{ exp }}</td>
     <td>{{ exp.inCat }}</td>
     <td>{{ exp.keeper }}</td>
     <td>{{ exp.summ }}</td>
   </tr>
   </tbody>
 </table>
-<p>{{ expenseList| json }}</p>
+<p></p>

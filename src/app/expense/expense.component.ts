@@ -8,12 +8,13 @@ import { expenseService } from '../expense/expense.service';
 })
 export class ExpenseComponent implements OnInit {
 
-  expenseList: void;
+  expenseList;
   
   constructor(private expenseService: expenseService ) { }
 
   ngOnInit() {
     this.expenseList = this.expenseService.getCostEnrtyList();
+    console.log(this.expenseList)
   
   }
 
