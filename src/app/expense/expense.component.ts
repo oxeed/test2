@@ -13,6 +13,7 @@ export class ExpenseComponent implements OnInit {
 
   ngOnInit() {
     this.expenseList = this.expenseService.getCostEnrtyList();
+    console.log(this.expenseList);
   }
 
 }

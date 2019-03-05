@@ -1,9 +1,7 @@
-import { IncomeCategories } from './../../category/incomecat/income-categories.model';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { CostEntry } from '../costentry/costentry.model';
 import { CostEntryService } from '../costentry/costentry.service';
-import { KeeperService } from '../../keeper/keeper.service';
 
 
 
@@ -15,22 +13,23 @@ import { KeeperService } from '../../keeper/keeper.service';
   providers: [CostEntryService]
 })
 export class CostentryComponent implements OnInit {
-  date;
-  costEntry: CostEntry[];
+  date: {year: number, month: number, day: number};
+  costEntry;
   incomeCat;
   keeper;
-
 
 
   @ViewChild('costEnt') costEntryForm: NgForm;
 
 
-  constructor(private costEntryService: CostEntryService,
-    private keeperService: KeeperService ) { }
+  constructor(private costEntryService: CostEntryService,) { }
 
   ngOnInit() {
     this.incomeCat = this.costEntryService.getIncomeCat();
-    this.keeper = this.keeperService.getKeeperModel();
+    this.keeper = this.costEntryService.getKeeper();
+    this.costEntry = this.costEntryService.getCostEntry();
+
+    console.log(this.costEntry);
 
 
   }
