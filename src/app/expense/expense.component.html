@@ -8,12 +8,11 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let exp of expenseList"
+  <tr *ngFor="let exp of expenseList "
   >
-    <td></td>
-    <td>{{ exp.date }}</td>
-    <td>{{ exp.keeper }}</td>
-    <td>{{ exp.inCat }}</td>
+    <td>{{ exp.date|date }}</td>
+    <td *ngFor="let keeper of exp.keeper">{{ keeper.name }}</td>
+    <td *ngFor="let incom_cat of exp.inCat">{{ incom_cat.category_name }}</td>
     <td>{{ exp.summ }}</td>
   </tr>
   </tbody>
