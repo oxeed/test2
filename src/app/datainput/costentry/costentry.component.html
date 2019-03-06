@@ -1,12 +1,11 @@
 <div class="container">
-
   <form (ngSubmit)="onSubmit()"
   #costEnt="ngForm">
   <br>
   <div class="row">
     <div class="col-sm-7">
       Введите трату за:
-      <pre>{{ model | json }}</pre>
+      <pre>{{ date | json }}</pre>
     </div>
 
 
@@ -29,7 +28,7 @@
     </div>
      </div>
 
-    
+
 
     <div class="row">
         <div class="col-sm-12">
@@ -51,8 +50,8 @@
           </div>
         </div>
     </div>
-  
- 
+
+
 
     <div class="row">
         <div class="col-sm-12">
@@ -75,7 +74,7 @@
             <div class="input-group mb-3">
                 <select class="custom-select" id="inputGroupSelect02"
                 ngModel
-                name="income_select">
+                name="keeper">
                     <option
                       *ngFor="let i of incomeCat"
                     [ngValue]="i">{{ i.category_name }}</option>
@@ -93,7 +92,7 @@
      <p>  AAAA</p>
 
   </form>
-  
+
 
 
 

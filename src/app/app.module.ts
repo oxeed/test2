@@ -17,6 +17,7 @@ import { IncomecatComponent } from './category/incomecat/incomecat.component';
 import { KeeperService } from './keeper/keeper.service';
 import { IncomeCategoriesService } from './category/incomecat/incomecat.service';
 import { CostEntryService } from '../app/datainput/costentry/costentry.service';
+import { ExpenseService  } from '../app/expense/expense.service';
 
 import { TreeModule } from 'angular-tree-component';
 import { DatainputComponent } from './datainput/datainput.component';
@@ -58,7 +59,8 @@ const appRoutes: Routes = [
   ],
   providers: [IncomeCategoriesService, 
               KeeperService,
-              CostEntryService],
+              CostEntryService,
+              ExpenseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

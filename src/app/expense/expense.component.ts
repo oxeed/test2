@@ -1,21 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { expenseService } from '../expense/expense.service';
+import { ExpenseService } from '../expense/expense.service';
+import { CostEntryService} from '../datainput/costentry/costentry.service';
+
 @Component({
   selector: 'app-expense',
   templateUrl: './expense.component.html',
   styleUrls: ['./expense.component.css'],
-  providers: [expenseService]
+  providers: []
 })
 export class ExpenseComponent implements OnInit {
 
   expenseList;
-  
-  constructor(private expenseService: expenseService ) { }
+
+  constructor(private expenseService: CostEntryService ) { }
 
   ngOnInit() {
-    this.expenseList = this.expenseService.getCostEnrtyList();
-    console.log(this.expenseList)
-  
+    this.expenseList = this.expenseService.getCostEntry();
+    console.log(this.expenseList);
   }
 
 }
