@@ -15,7 +15,7 @@ export class ExpenseComponent implements OnInit {
   constructor(private expenseService: CostEntryService ) { }
 
   ngOnInit() {
-    this.expenseList = this.expenseService.getCostEntry();
+    
     console.log(this.expenseList);
   }
 

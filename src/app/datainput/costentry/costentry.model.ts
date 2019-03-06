@@ -9,7 +9,7 @@ export class CostEntry {
     public inCat: IncomeCategories[];
 
 
-constructor(id: number, date: [], summ: number, keeper: KeeperModel[], inCat: IncomeCategories[] ) {
+constructor(id: number, date: Date, summ: number, keeper: KeeperModel[], inCat: IncomeCategories[] ) {
     this.date = date;
     this.id = id;
     this.summ = summ;
