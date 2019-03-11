@@ -13,7 +13,7 @@ import { CostEntryService } from '../costentry/costentry.service';
   providers: [CostEntryService]
 })
 export class CostentryComponent implements OnInit {
-  date: {year: number, month: number, day: number};
+  date: Date;
   costEntry;
   incomeCat;
   keeper;
@@ -22,7 +22,7 @@ export class CostentryComponent implements OnInit {
   @ViewChild('costEnt') costEntryForm: NgForm;
 
 
-  constructor(private costEntryService: CostEntryService,) { }
+  constructor(private costEntryService: CostEntryService) { }
 
   ngOnInit() {
     this.incomeCat = this.costEntryService.getIncomeCat();
@@ -40,7 +40,7 @@ export class CostentryComponent implements OnInit {
       this.costEntryForm.value.date,
       this.costEntryForm.value.summ,
       this.costEntryForm.value.keeper_select,
-      this.costEntryForm.value.income_select);
+      this.costEntryForm.value.incomeCat);
     this.costEntryForm.reset();
     console.log(newCost);
 
