@@ -1,13 +1,18 @@
 import { KeeperModel } from './../../keeper/keeper.model';
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { CostEntry } from '../costentry/costentry.model';
 import { IncomeCategories } from '../../category/incomecat/income-categories.model';
 import { IncomeCategoriesService } from '../../category/incomecat/incomecat.service';
 import { KeeperService } from '../../keeper/keeper.service';
 import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
+import { ThrowStmt } from '@angular/compiler';
+
 
 @Injectable()
 export class CostEntryService {
+
+    private shareEntry: CostEntry[];
+    onClick: EventEmitter<CostEntry[]> = new EventEmitter();
 
     lastId = 0;
 
@@ -40,12 +45,14 @@ export class CostEntryService {
 
     addCostEntry(costentry: CostEntry) {
         this.Costentry.push(costentry);
-        return this;
+    
     }
 
-    addIncomeCat(income:IncomeCategories[]){
-        this.incomeCategoryService.addIncomeCategotiestoCostEntry(income);
-    }
+
+
+      
 
     }
+
+    
 

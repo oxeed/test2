@@ -27,21 +27,18 @@ export class CostentryComponent implements OnInit {
   ngOnInit() {
     this.incomeCat = this.costEntryService.getIncomeCat();
     this.keeper = this.costEntryService.getKeeper();
-    console.log(this.date)
+  
   
 
 
   }
 
-  onSubmit() {
-     new CostEntry(
-      this.costEntryForm.value.id,
-      this.costEntryForm.value.date,
-      this.costEntryForm.value.summ,
-      this.costEntryForm.value.keeper_select,
-      this.costEntryForm.value.income_select);
-    this.costEntryForm.reset();
-    console.log(CostEntry);
+  onSubmit(form: NgForm) {
+    const value = form.value;
+    const Entry = new CostEntry(value.id, value.date, value.summ, value.keeper_select, value.income_select);
+    this.costEntryService.addCostEntry(Entry);
+    console.log(Entry);
+   
 
 
 
