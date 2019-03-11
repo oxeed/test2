@@ -37,7 +37,9 @@ export class CostentryComponent implements OnInit {
     const value = form.value;
     const Entry = new CostEntry(value.id, value.date, value.summ, value.keeper_select, value.income_select);
     this.costEntryService.addCostEntry(Entry);
+    form.reset();
     console.log(Entry);
+    console.log(this.costEntryService.getCostEntry())
    
 
 
