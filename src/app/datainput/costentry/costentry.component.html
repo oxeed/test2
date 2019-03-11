@@ -1,11 +1,11 @@
 <div class="container">
-  <form (ngSubmit)="onSubmit(costEnt)"
+  <form (ngSubmit)="onSubmit()"
   #costEnt="ngForm">
   <br>
   <div class="row">
     <div class="col-sm-7">
       Введите трату за:
-    
+      <pre>{{ date | json }}</pre>
     </div>
 
 
@@ -74,7 +74,7 @@
             <div class="input-group mb-3">
                 <select class="custom-select" id="inputGroupSelect02"
                 ngModel
-                name="income_select">
+                name="incomeCat">
                     <option
                       *ngFor="let i of incomeCat"
                     [ngValue]="i">{{ i.category_name }}</option>
@@ -89,30 +89,9 @@
             <button type="submit" class="btn btn-primary">Ввести</button>
           </div>
       </div>
-    
+
 
   </form>
-
-  <table class="table table-striped">
-    <thead>
-    <tr>
-      <th >Дата</th>
-      <th >Откуда </th>
-      <th >Куда</th>
-      <th >Сумма</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let exp of costEntry "
-    >
-      <td>{{ exp.date|date }}</td>
-      <td *ngFor="let keeper of exp.keeper">{{ keeper.name }}</td>
-      <td *ngFor="let incom_cat of exp.inCat">{{ incom_cat.category_name }}</td>
-      <td>{{ exp.summ }}</td>
-    </tr>
-    </tbody>
-  </table>
-  
 
 
 

@@ -13,11 +13,7 @@ import { CostEntryService } from '../costentry/costentry.service';
   providers: [CostEntryService]
 })
 export class CostentryComponent implements OnInit {
-<<<<<<< HEAD
-  date: Date;
-=======
   date;
->>>>>>> cb1bbd64982da3fea067d045fff438b1578a118c
   costEntry;
   incomeCat;
   keeper;
@@ -32,32 +28,20 @@ export class CostentryComponent implements OnInit {
     this.incomeCat = this.costEntryService.getIncomeCat();
     this.keeper = this.costEntryService.getKeeper();
     this.costEntry = this.costEntryService.getCostEntry();
-  
-  
+
+
 
 
   }
 
-<<<<<<< HEAD
-  onSubmit() {
-    const newCost = new CostEntry(
-      this.costEntryForm.value.id,
-      this.costEntryForm.value.date,
-      this.costEntryForm.value.summ,
-      this.costEntryForm.value.keeper_select,
-      this.costEntryForm.value.incomeCat);
-    this.costEntryForm.reset();
-    console.log(newCost);
-=======
   onSubmit(form: NgForm) {
     const value = form.value;
     const Entry = new CostEntry(value.id, value.date, value.summ, value.keeper_select, value.income_select);
     this.costEntryService.addCostEntry(Entry);
     form.reset();
     console.log(Entry);
-    console.log(this.costEntryService.getCostEntry())
-   
->>>>>>> cb1bbd64982da3fea067d045fff438b1578a118c
+    console.log(this.costEntryService.getCostEntry());
+
 
 
 

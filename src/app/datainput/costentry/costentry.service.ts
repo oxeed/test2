@@ -4,11 +4,8 @@ import { CostEntry } from '../costentry/costentry.model';
 import { IncomeCategories } from '../../category/incomecat/income-categories.model';
 import { IncomeCategoriesService } from '../../category/incomecat/incomecat.service';
 import { KeeperService } from '../../keeper/keeper.service';
-<<<<<<< HEAD
-=======
 import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import { ThrowStmt } from '@angular/compiler';
->>>>>>> cb1bbd64982da3fea067d045fff438b1578a118c
 
 
 @Injectable()
@@ -48,14 +45,14 @@ export class CostEntryService {
 
     addCostEntry(costentry: CostEntry) {
         this.Costentry.push(costentry);
-    
-    }
-
-
-
-      
 
     }
 
-    
+
+
+
+
+    }
+
+
 
