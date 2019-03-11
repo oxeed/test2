@@ -93,6 +93,27 @@
 
   </form>
 
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th >Дата</th>
+      <th >Откуда </th>
+      <th >Куда</th>
+      <th >Сумма</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let exp of costEntry "
+    >
+      <td>{{ exp.date|date }}</td>
+      <td *ngFor="let keeper of exp.keeper">{{ keeper.name }}</td>
+      <td *ngFor="let incom_cat of exp.inCat">{{ incom_cat.category_name }}</td>
+      <td>{{ exp.summ }}</td>
+    </tr>
+    </tbody>
+  </table>
+  
+
 
 
 

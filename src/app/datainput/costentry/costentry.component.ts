@@ -27,6 +27,7 @@ export class CostentryComponent implements OnInit {
   ngOnInit() {
     this.incomeCat = this.costEntryService.getIncomeCat();
     this.keeper = this.costEntryService.getKeeper();
+    this.costEntry = this.costEntryService.getCostEntry();
   
   
 
