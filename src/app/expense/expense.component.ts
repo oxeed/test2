@@ -6,7 +6,7 @@ import { ExpenseService } from '../expense/expense.service'
   selector: 'app-expense',
   templateUrl: './expense.component.html',
   styleUrls: ['./expense.component.css'],
-  providers: [ExpenseService]
+  providers: [CostEntryService]
 })
 export class ExpenseComponent implements OnInit {
 
@@ -16,7 +16,12 @@ export class ExpenseComponent implements OnInit {
 
   ngOnInit() {
     this.expenseList = this.costEntryService.getCostEntry();
+<<<<<<< HEAD
 
+=======
+    console.log(this.expenseList);
+ 
+>>>>>>> cb1bbd64982da3fea067d045fff438b1578a118c
   }
 
 }

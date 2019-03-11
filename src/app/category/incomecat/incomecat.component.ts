@@ -27,6 +27,10 @@ export class IncomecatComponent implements OnInit {
     this.incomeCategory = this.incomeCategoriesService.getIncomeCategories();
   }
 
+  onSelected(){
+    this.incomeCategoriesService.incomeCatServiceSelected.emit();
+  }
+
   onSubmit() {
 
     const newCategory = new IncomeCategories(this.incomeCategoryForm.value.category_name,

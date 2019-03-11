@@ -2,9 +2,9 @@ import { KeeperModel } from './../../keeper/keeper.model';
 import { IncomeCategories } from '../../category/incomecat/income-categories.model';
 
 export class CostEntry {
-    public date;
-    public id;
-    public summ;
+    public date:Date;
+    public id: number;
+    public summ: number;
     public keeper: KeeperModel[];
     public inCat: IncomeCategories[];
 
