@@ -45,7 +45,7 @@
                                       name="parent_category"
                                       ngModel
                                        >
-                                        <option *ngFor="let category of incomeCategory" [value]="category">{{category.category_name}}</option>
+                                        <option *ngFor="let category of incomeCategory" [ngValue]="category">{{category.category_name}}</option>
                                         <option>Родительская Категория</option>
                                         <option>Без Категории</option>
                                         <option></option>

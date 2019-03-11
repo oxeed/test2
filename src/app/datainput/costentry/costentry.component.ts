@@ -13,7 +13,7 @@ import { CostEntryService } from '../costentry/costentry.service';
   providers: [CostEntryService]
 })
 export class CostentryComponent implements OnInit {
-  date: {year: number, month: number, day: number};
+  date;
   costEntry;
   incomeCat;
   keeper;
@@ -27,22 +27,21 @@ export class CostentryComponent implements OnInit {
   ngOnInit() {
     this.incomeCat = this.costEntryService.getIncomeCat();
     this.keeper = this.costEntryService.getKeeper();
-    this.costEntry = this.costEntryService.getCostEntry();
-
-    console.log(this.costEntry);
+    console.log(this.date)
+  
 
 
   }
 
   onSubmit() {
-    const newCost = new CostEntry(
+     new CostEntry(
       this.costEntryForm.value.id,
       this.costEntryForm.value.date,
       this.costEntryForm.value.summ,
       this.costEntryForm.value.keeper_select,
       this.costEntryForm.value.income_select);
     this.costEntryForm.reset();
-    console.log(newCost);
+    console.log(CostEntry);
 
 
 

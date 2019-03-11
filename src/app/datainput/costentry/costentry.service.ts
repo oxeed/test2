@@ -43,5 +43,9 @@ export class CostEntryService {
         return this;
     }
 
+    addIncomeCat(income:IncomeCategories[]){
+        this.incomeCategoryService.addIncomeCategotiestoCostEntry(income);
+    }
 
-}
+    }
+

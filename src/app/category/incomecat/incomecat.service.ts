@@ -1,9 +1,10 @@
 import { IncomeCategories } from './income-categories.model';
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 
 
 @Injectable()
 export class IncomeCategoriesService {
+  incomeCatServiceSelected = new EventEmitter<IncomeCategories>();
 
   lastId =  1;
 
@@ -25,6 +26,10 @@ export class IncomeCategoriesService {
       category.id = ++this.lastId;
     }
     this.incomeCategory.push(category);
+  }
+
+  addIncomeCategotiestoCostEntry(income:IncomeCategories[]){
+    this.incomeCategory.push(...income);
   }
 
   editIncomeCategories() {}

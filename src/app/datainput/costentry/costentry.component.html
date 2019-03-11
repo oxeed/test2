@@ -5,7 +5,7 @@
   <div class="row">
     <div class="col-sm-7">
       Введите трату за:
-      <pre>{{ date | json }}</pre>
+    
     </div>
 
 
@@ -74,7 +74,7 @@
             <div class="input-group mb-3">
                 <select class="custom-select" id="inputGroupSelect02"
                 ngModel
-                name="keeper">
+                name="income_select">
                     <option
                       *ngFor="let i of incomeCat"
                     [ngValue]="i">{{ i.category_name }}</option>
@@ -89,7 +89,7 @@
             <button type="submit" class="btn btn-primary">Ввести</button>
           </div>
       </div>
-     <p>  AAAA</p>
+    
 
   </form>
 
