@@ -27,20 +27,16 @@ export class IncomecatComponent implements OnInit {
     this.incomeCategory = this.incomeCategoriesService.getIncomeCategories();
   }
 
-  onSelected(){
+  onSelected() {
     this.incomeCategoriesService.incomeCatServiceSelected.emit();
   }
 
-  onSubmit() {
-
-    const newCategory = new IncomeCategories(this.incomeCategoryForm.value.category_name,
-      this.incomeCategoryForm.value.parent_category,
-      this.incomeCategoryForm.value.comment,
-      this.incomeCategoryForm.value.id);
-    this.incomeCategoriesService.addIncomeCategories(newCategory);
-    this.incomeCategoryForm.reset();
-    console.log(newCategory);
-
+  onSubmit(form: NgForm) {
+    const value = form.value;
+    const incomeCat = new IncomeCategories(value.category_name, value.parent_category, value.comment, value.id);
+    this.incomeCategoriesService.addIncomeCategories(incomeCat);
+    form.reset();
+    console.log(this.incomeCategory);
   }
 
 }
