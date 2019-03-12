@@ -24,17 +24,13 @@ export class KeeperComponent implements OnInit {
 
   }
 
-  onSubmit(){
-  	const newKeeper = new KeeperModel(
-  		this.keeperForm.value.id,
-  		this.keeperForm.value.keeper_name,
-      this.keeperForm.value.keeper_summ,
+  onSubmit(form:NgForm){
+    const value = form.value;
+    const keeCat = new KeeperModel(value.id, value.name, value.summ);
+    this.keeperService.addKeeperModel(keeCat);
+    form.reset();
+    console.log(this.keeperCat)
+  	
 
-  		);
-  	this.keeperService.addKeeperModel(newKeeper);
-  	this.keeperForm.reset();
-  	console.log(newKeeper);
   }
-
-
 }

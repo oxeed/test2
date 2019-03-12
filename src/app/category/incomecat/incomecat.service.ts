@@ -28,9 +28,7 @@ export class IncomeCategoriesService {
     this.incomeCategory.push(category);
   }
 
-  addIncomeCategotiestoCostEntry(income:IncomeCategories[]){
-    this.incomeCategory.push(...income);
-  }
+ 
 
   editIncomeCategories() {}
 }

@@ -11,9 +11,7 @@ import { ThrowStmt } from '@angular/compiler';
 @Injectable()
 export class CostEntryService {
 
-    private shareEntry: CostEntry[];
-    onClick: EventEmitter<CostEntry[]> = new EventEmitter();
-
+  
     lastId = 0;
 
     Costentry: CostEntry[] = [
@@ -45,14 +43,14 @@ export class CostEntryService {
 
     addCostEntry(costentry: CostEntry) {
         this.Costentry.push(costentry);
-
+    
     }
 
 
 
-
+      
 
     }
 
-
+    
 
