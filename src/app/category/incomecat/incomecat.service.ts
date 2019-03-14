@@ -1,5 +1,6 @@
 import { IncomeCategories } from './income-categories.model';
 import { Injectable, EventEmitter } from '@angular/core';
+import { Subject, Observable } from 'rxjs';
 
 
 @Injectable()
@@ -7,6 +8,10 @@ export class IncomeCategoriesService {
   incomeCatServiceSelected = new EventEmitter<IncomeCategories>();
 
   lastId =  1;
+
+  private subject = new Subject<IncomeCategories[]>();
+
+  private incomeCat: Subject<IncomeCategories[]>;
 
   private incomeCategory: IncomeCategories[] = [
     new IncomeCategories ( 'BIT', 'Продукты', 'Чтобы было вкусно', 1),
@@ -17,7 +22,9 @@ export class IncomeCategoriesService {
 
   ];
 
-  getIncomeCategories() {
+  
+
+  public getIncomeCategories() {
     return this.incomeCategory;
   }
 
@@ -26,6 +33,10 @@ export class IncomeCategoriesService {
       category.id = ++this.lastId;
     }
     this.incomeCategory.push(category);
+  }
+
+  getObInCat(): Observable<IncomeCategories[]>{
+    return this.subject.asObservable();
   }
 
  

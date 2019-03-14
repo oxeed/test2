@@ -29,7 +29,7 @@ export class CostEntryService {
                 private keeperService: KeeperService) {}
 
     getIncomeCat() {
-        return this.incomeCategoryService.getIncomeCategories();
+        return this.incomeCategoryService.getObInCat();
     }
 
     getKeeper() {
