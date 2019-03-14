@@ -9,9 +9,6 @@ export class IncomeCategoriesService {
 
   lastId =  1;
 
-  private subject = new Subject<IncomeCategories[]>();
-
-  private incomeCat: Subject<IncomeCategories[]>;
 
   private incomeCategory: IncomeCategories[] = [
     new IncomeCategories ( 'BIT', 'Продукты', 'Чтобы было вкусно', 1),
@@ -24,7 +21,7 @@ export class IncomeCategoriesService {
 
   
 
-  public getIncomeCategories() {
+  getIncomeCategories() {
     return this.incomeCategory;
   }
 
@@ -35,9 +32,6 @@ export class IncomeCategoriesService {
     this.incomeCategory.push(category);
   }
 
-  getObInCat(): Observable<IncomeCategories[]>{
-    return this.subject.asObservable();
-  }
 
  
 
