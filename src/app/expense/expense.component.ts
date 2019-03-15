@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CostEntryService} from '../datainput/costentry/costentry.service';
+import { Subscription } from 'rxjs';
+import { CostEntry } from '../../app/datainput/costentry/costentry.model';
 
 @Component({
   selector: 'app-expense',
@@ -10,13 +12,22 @@ import { CostEntryService} from '../datainput/costentry/costentry.service';
 export class ExpenseComponent implements OnInit {
 
   expenseList;
+  expList: CostEntry[];
+  subscription: Subscription;
 
-  constructor(private costEntryService: CostEntryService ) { }
+  constructor(private costEntryService: CostEntryService ) {
+    this.subscription = this.costEntryService.getObs().subscribe(expList => {this.expList = expList});
+   }
 
   ngOnInit() {
     this.expenseList = this.costEntryService.getCostEntry();
-    console.log(this.expenseList);
+    this.costEntryService.getObs().subscribe(expList => this.expList= expList);
+    console.log(this.expList)
 
+  }
+
+  ngOnDestroy(){
+    this.subscription.unsubscribe();
   }
 
 }

@@ -4,14 +4,13 @@ import { CostEntry } from '../costentry/costentry.model';
 import { IncomeCategories } from '../../category/incomecat/income-categories.model';
 import { IncomeCategoriesService } from '../../category/incomecat/incomecat.service';
 import { KeeperService } from '../../keeper/keeper.service';
-import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
-import { ThrowStmt } from '@angular/compiler';
+import { Subject, Observable } from 'rxjs';
 
 
 @Injectable()
-export class CostEntryService {
+export class CostEntryService {  
+    public subject = new Subject<any>();
 
-  
     lastId = 0;
 
     Costentry: CostEntry[] = [
@@ -43,8 +42,13 @@ export class CostEntryService {
 
     addCostEntry(costentry: CostEntry) {
         this.Costentry.push(costentry);
-    
+        this.subject.next(costentry)
     }
+
+    getObs():Observable<CostEntry[]> {
+        return this.subject.asObservable();
+    }
+
 
 
 
