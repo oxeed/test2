@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { CostEntry } from '../costentry/costentry.model';
 import { CostEntryService } from '../costentry/costentry.service';
+import { IncomeCategories } from 'src/app/category/incomecat/income-categories.model';
+import { KeeperModel } from 'src/app/keeper/keeper.model';
 
 
 @Component({
@@ -13,9 +15,8 @@ import { CostEntryService } from '../costentry/costentry.service';
 
 export class CostentryComponent implements OnInit {
   date;
-  costEntry;
-  incomeCat;
-  keeper;
+  incomeCat: IncomeCategories[];
+  keeper: KeeperModel[];
   newCost: CostEntry[];
 
   @ViewChild('costEnt') costEntryForm: NgForm;
@@ -26,7 +27,7 @@ export class CostentryComponent implements OnInit {
   ngOnInit() {
     this.incomeCat = this.costEntryService.getIncomeCat();
     this.keeper = this.costEntryService.getKeeper();
-    this.costEntry = this.costEntryService.getCostEntry();
+ 
   }
 
 
