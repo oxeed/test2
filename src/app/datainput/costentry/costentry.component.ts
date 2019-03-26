@@ -17,6 +17,7 @@ export class CostentryComponent implements OnInit {
   date;
   incomeCat: IncomeCategories[];
   keeper: KeeperModel[];
+  costentry: CostEntry[];
   newCost: CostEntry[];
 
   @ViewChild('costEnt') costEntryForm: NgForm;
@@ -25,9 +26,22 @@ export class CostentryComponent implements OnInit {
   constructor(private costEntryService: CostEntryService) { }
 
   ngOnInit() {
+    this.costentry = this.costEntryService.getCostEntry();
     this.incomeCat = this.costEntryService.getIncomeCat();
     this.keeper = this.costEntryService.getKeeper();
- 
+    this.costEntryService.costEntryChanged
+    .subscribe(
+      (newCost: CostEntry[]) => {
+        this.newCost = newCost;
+      }
+    )
+    console.log(this.costentry) 
+  }
+
+  
+
+  onExpense(){
+    
   }
 
 

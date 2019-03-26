@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CostEntryService} from '../datainput/costentry/costentry.service';
+import { CostEntry } from '../datainput/costentry/costentry.model';
 
 @Component({
   selector: 'app-expense',
@@ -10,13 +11,15 @@ import { CostEntryService} from '../datainput/costentry/costentry.service';
 export class ExpenseComponent implements OnInit {
 
   expenseList;
-
+  newCost: CostEntry[];
+  
   constructor(private costEntryService: CostEntryService ) { }
 
   ngOnInit() {
     this.expenseList = this.costEntryService.getCostEntry();
     console.log(this.expenseList);
-
+   
+     
   }
 
 }

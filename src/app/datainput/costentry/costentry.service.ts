@@ -8,7 +8,7 @@ import { KeeperService } from '../../keeper/keeper.service';
 
 @Injectable()
 export class CostEntryService {
-
+    costEntryChanged = new EventEmitter<CostEntry[]>();
   
     lastId = 0;
 
@@ -41,6 +41,7 @@ export class CostEntryService {
 
     addCostEntry(costentry: CostEntry) {
         this.Costentry.push(costentry);
+        this.costEntryChanged.emit(this.Costentry);
     
     }
 
