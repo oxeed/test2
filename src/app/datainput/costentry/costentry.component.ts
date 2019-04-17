@@ -10,7 +10,7 @@ import { KeeperModel } from 'src/app/keeper/keeper.model';
   selector: 'app-costentry',
   templateUrl: './costentry.component.html',
   styleUrls: ['./costentry.component.css'],
-  providers: [CostEntryService]
+  providers: []
 })
 
 export class CostentryComponent implements OnInit {
@@ -18,43 +18,30 @@ export class CostentryComponent implements OnInit {
   incomeCat: IncomeCategories[];
   keeper: KeeperModel[];
   costentry: CostEntry[];
-  newCost: CostEntry[];
+  
 
   @ViewChild('costEnt') costEntryForm: NgForm;
 
 
-  constructor(private costEntryService: CostEntryService) { }
+  constructor(private costEntryService: CostEntryService) { 
+    
+  }
 
   ngOnInit() {
     this.costentry = this.costEntryService.getCostEntry();
     this.incomeCat = this.costEntryService.getIncomeCat();
     this.keeper = this.costEntryService.getKeeper();
-    this.costEntryService.costEntryChanged
-    .subscribe(
-      (newCost: CostEntry[]) => {
-        this.newCost = newCost;
-      }
-    )
-    console.log(this.costentry) 
+    this.costEntryService.getObs().subscribe(cost => this.costentry = cost);
   }
 
   
 
-  onExpense(){
-    
-  }
-
-
-  onSubmit(form: NgForm) {
+  onSubmit(form: NgForm): void {
     const value = form.value;
     const Entry = new CostEntry(value.id, value.date, value.summ, value.keeper_select, value.income_select);
-    this.costEntryService.addCostEntry(Entry);
+    this.costEntryService.addObs(Entry);
+    this.costEntryService.getObs();
     form.reset();
-    console.log(Entry);
-    console.log(this.costEntryService.getCostEntry());
-
-
-
 
 
 
