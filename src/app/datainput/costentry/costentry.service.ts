@@ -11,9 +11,7 @@ import { map } from 'rxjs/operators';
 @Injectable()
 export class CostEntryService {
     subject = new Subject<CostEntry[]>();
-   
     serviceData: CostEntry[];
-  
     lastId = 0;
 
     Costentry: CostEntry[] = [
@@ -56,15 +54,11 @@ export class CostEntryService {
     }
 
 
-    getObs(): Observable<CostEntry[]>{
+    getObs(): Observable<CostEntry[]> {
       return this.subject.asObservable();
-    } 
+    }
 
-    addObs(data: any): void{
+    addObs(data: any): void {
       this.subject.next(data);
     }
     }
-
-
-    
-

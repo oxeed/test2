@@ -18,14 +18,9 @@ export class CostentryComponent implements OnInit {
   incomeCat: IncomeCategories[];
   keeper: KeeperModel[];
   costentry: CostEntry[];
-  
-
   @ViewChild('costEnt') costEntryForm: NgForm;
 
-
-  constructor(private costEntryService: CostEntryService) { 
-    
-  }
+  constructor(private costEntryService: CostEntryService) { }
 
   ngOnInit() {
     this.costentry = this.costEntryService.getCostEntry();
@@ -34,17 +29,13 @@ export class CostentryComponent implements OnInit {
     this.costEntryService.getObs().subscribe(cost => this.costentry = cost);
   }
 
-  
-
   onSubmit(form: NgForm): void {
     const value = form.value;
-    const Entry = new CostEntry(value.id, value.date, value.summ, value.keeper_select, value.income_select);
+    const Entry = new CostEntry(value.id, value.date, value.summ, value.keeper_select, value.incomeCat);
     this.costEntryService.addObs(Entry);
     this.costEntryService.getObs();
+    console.log(Entry);
     form.reset();
-
-
-
   }
 
   }
